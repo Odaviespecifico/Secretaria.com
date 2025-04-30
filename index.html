@@ -16,7 +16,7 @@
     <label for="nomePai">Nome do Responsável</label>
     <input type="text" name="Npai" id="Npai">
     <label for="nomeAluno">Nome do Aluno</label>
-    <input type="text" name="nAluno" id="Npai">
+    <input type="text" name="nAluno" id="Naluno">
     
     <br class="espaço">
     
@@ -25,6 +25,14 @@
     <label for="unitsWL">Unidades pendentes de WL</label>
     <input type="text" name="uWL" id="uWL">
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('input', function(){
+            let Npai = document.getElementById('Npai').value
+            let Naluno = document.getElementById('Naluno').value
+            console.log(Npai)
+        });
+    </script>
+    <h2>Texto para enviar:</h2>
+    <p class="texto"></p>
 </body>
 </html>
