@@ -15,8 +15,15 @@ document.addEventListener('input', function(){
     function colocarUnidade(Unidades) {
         quantidadesUnidades = Unidades.length == 0 ? [] : Unidades.split(' ')
         console.log('O tamanho é:' + quantidadesUnidades.length)
+        console.log('Unidade tem virgula? ' + Unidades.indexOf(','))
         if (quantidadesUnidades.length == 0) {
             console.log('0')
+            return Unidades;
+        }
+        
+        else if (quantidadesUnidades.length > 1 | Unidades.indexOf(',') != -1) {
+            console.log('>1')
+            Unidades = 'Unidades ' + Unidades;
             return Unidades;
         }
         else if (quantidadesUnidades.length == 1) {
@@ -24,11 +31,7 @@ document.addEventListener('input', function(){
             Unidades = ('Unidade ' + Unidades);
             return Unidades;
         }
-        else if (quantidadesUnidades.length > 1) {
-            console.log('>1')
-            Unidades = 'Unidades ' + Unidades;
-            return Unidades;
-        }
+        
     }
     console.log('iniciou')
     Cl = colocarUnidade(Cl)
