@@ -14,12 +14,11 @@ input {
     width: auto;
 }
 
-.top {
-    border-style: solid;
-    border-color: rgb(132, 104, 132);
-    border-left: 0px;
-    border-right: 0px;
-    
-    padding: 10px 0px;
+hr {
+    border-width: 3px;
+    margin-top: 30px;
+    border-style: double;
+    border-color: rgb(255, 221, 221);
+    margin: 30px -5px;
 }
 
