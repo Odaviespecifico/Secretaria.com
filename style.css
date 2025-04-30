@@ -10,15 +10,25 @@ input {
     width: 120px;
 }
 
+input:focus {
+    background-color: rgb(226, 253, 244);
+}
 #menino {
     width: auto;
 }
 
 hr {
     border-width: 3px;
-    margin-top: 30px;
     border-style: double;
     border-color: rgb(255, 221, 221);
-    margin: 30px -5px;
+    margin: 15px -5px;
 }
 
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a::after {
+    color: purple;
+}
