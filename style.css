@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label{
+    margin: 30px 0px 30px;
+}
+
+input {
+    width: 120px;
+}
+
+#menino {
+    width: auto;
+}
+
+.top {
+    border-style: solid;
+    border-color: rgb(132, 104, 132);
+    border-left: 0px;
+    border-right: 0px;
+    
+    padding: 10px 0px;
+}
+
