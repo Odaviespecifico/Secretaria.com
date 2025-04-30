@@ -10,6 +10,9 @@ input {
     width: 120px;
 }
 
+h1 {
+    margin: 10px 0px;
+}
 input:focus {
     background-color: rgb(226, 253, 244);
 }
@@ -31,4 +34,26 @@ a {
 
 a::after {
     color: purple;
+}
+
+.text-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10%;
+}
+
+button {
+    height: 70%;
+    width: auto;
+    border-radius: 20px;
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(224, 255, 233);
+    transition-duration: 200ms;
+}
+
+button:hover {
+    box-shadow: 5px 4px 10px 1px rgb(185, 185, 185);
+    background-color: rgb(194, 255, 211);
 }

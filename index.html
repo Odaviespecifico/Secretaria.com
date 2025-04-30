@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Secretaria CNA</h1>
+    <hr>
     <div class="top">
         <div class="row">
             <select name="Seletor-atividade" id="Atividade">
@@ -19,7 +20,7 @@
                 <option value="Boa tarde">Tarde</option>
                 <option value="Boa noite">Noite</option>
             </select>
-            <label for="menino">Menino?</label>
+            <label for="menino">É menino?</label>
             <input type="checkbox" id="menino" value="True">
         </div>
         <br>
@@ -30,23 +31,23 @@
         <br class="espaço">
         
         <div class="row">
-            <label for="nomePai">Nome do Responsável</label>
+            <label for="nomePai">Nome do Responsável: </label>
             <input type="text" name="Npai" id="Npai">
-            <label for="nomeAluno">Nome do Aluno</label>
+            <label for="nomeAluno">Nome do Aluno: </label>
             <input type="text" name="nAluno" id="Naluno">
         </div>
         
         <br class="espaço">
         
         <div class="row atividade">
-            <label for="unitsWL">Unidades Realizadas: WL</label>
+            <label for="unitsWL">Unidades Realizadas: <br> WL</label>
             <input type="text" name="uWL" id="RuWL">
             <label for="unitsCL">CL</label>
             <input type="text" name="uCL" id="RuCL">
         </div>
         <br>
         <div class="row atividade">
-            <label for="unitsWL">Unidades pendentes: Wl</label>
+            <label for="unitsWL">Unidades pendentes: <br>Wl</label>
             <input type="text" name="uWL" id="uWL">
             <label for="unitsCL">CL</label>
             <input type="text" name="uCL" id="uCL">
@@ -54,64 +55,12 @@
         </div>
     </div>
     <hr>
-    <h2>Texto para enviar:</h2>
+    <div class="text-button">
+        <h2>Texto para enviar:</h2>
+        <button id="copia" onclick="Função()">Copiar</button>
+    </div>
     <p id="texto"></p>
-    <script>
-        document.addEventListener('input', function(){
-            let Npai = document.getElementById('Npai').value;
-            let Naluno = document.getElementById('Naluno').value;
-            let Cl = document.getElementById('uCL').value;
-            let Wl = document.getElementById('uWL').value;
-            let rCl = document.getElementById('RuCL').value;
-            let rWl = document.getElementById('RuWL').value;
-            let hora = document.getElementById('hora').value;
-            let secretaria = document.getElementById('secretaria').value;
-            let sexo = document.getElementById('menino').checked;
-            let pronome1 = sexo == true ? 'ele' : 'ela';
-            let pronome2 = sexo == true ? 'dele' : 'dela';
-            let feito = ''
-            let nFeito = ''
-            console.log(pronome1, pronome2)
-            if (rCl != '' | rWl != ''){
-                feito = '*✅ O que já foi feito:* <br>';
-                if (rWl != '') {
-                    feito += `- WebLessons: ${rWl} <br>`
-                }
-                if (rCl != '') {
-                    feito += `- Consolidation Lessons: ${rCl} <br>`
-                }
-
-            }
-            
-            if (Cl != '' | Wl != ''){
-                nFeito= '*🔜 O que ainda precisa ser feito*<br>';
-                if (Wl != '') {
-                    nFeito += `- WebLessons: ${Wl} <br>`
-                }
-                if (Cl != '') {
-                    nFeito += `- Consolidation Lessons: ${Cl} <br>`
-                }
-            }
-
-            var texto = `${hora}, ${Npai} <br>
-Espero que tudo esteja ótimo! <br>
-<br>
-Passando para compartilhar um breve acompanhamento das atividades da Casa de ${Naluno}, conforme registrado no nosso sistema:<br>
-<br>
-    ${feito}
-    ${nFeito}
-<br>
-Contamos com você para incentivar e apoiar ${pronome1} na realização dessas atividades em casa. Esse acompanhamento faz toda a diferença no aproveitamento das aulas e no progresso ${pronome2}! <br>
-
-Caso ${pronome1} esteja tendo alguma dificuldade com as tarefas, podemos agendar um momento para ${pronome1} fazer no LAB com o acompanhamento da nossa monitora. <br>
-<br>
-Agradecemos a parceria! <br>
-Atenciosamente, <br>
-${secretaria} <br>
-*CNA Casa Forte*` 
-document.getElementById('texto').innerHTML = texto
-        });
-    </script>
+    <script src="script.js"></script>
     <script>
         function Função() {
             console.log('clicou')
@@ -119,7 +68,6 @@ document.getElementById('texto').innerHTML = texto
             navigator.clipboard.writeText(texto.innerText)
         }
     </script>
-    <button id="copia" onclick="Função()">Copiar</button>
     <hr>
     <h2>Instruções para uso:</h2>
     <ol>
