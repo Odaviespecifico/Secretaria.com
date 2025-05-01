@@ -65,7 +65,7 @@ document.addEventListener('input', function(){
     var texto = `${hora}, ${Npai} <br>
 Espero que tudo esteja ótimo! <br>
 <br>
-Passando para compartilhar um breve acompanhamento das atividades da Casa de ${Naluno}, conforme registrado no nosso sistema:<br>
+Passando para compartilhar um breve acompanhamento das atividades da casa de ${Naluno}, conforme registrado no nosso sistema:<br>
 <br>
 ${feito}
 ${nFeito}
