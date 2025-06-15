@@ -7,6 +7,10 @@ label{
 }
 
 input {
+    width: auto;
+}
+
+input [type = "text"] {
     width: 120px;
 }
 
@@ -15,9 +19,6 @@ h1 {
 }
 input:focus {
     background-color: rgb(226, 253, 244);
-}
-#menino {
-    width: auto;
 }
 
 hr {
@@ -57,4 +58,8 @@ button {
 button:hover {
     box-shadow: 5px 4px 10px 1px rgb(185, 185, 185);
     background-color: rgb(194, 255, 211);
+}
+
+.pipe {
+    padding: 0px 10px;;
 }

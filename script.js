@@ -1,45 +1,82 @@
 document.addEventListener('input', function(){
-    let Npai = document.getElementById('Npai').value;
+    document.getElementById('novoSistema').addEventListener('click', (e) => {
+        if (!novosistema) {
+        document.querySelector('.CL').innerHTML = ''
+        document.querySelector('.CLR').innerHTML = ''
+    }
+    else {
+        document.querySelector('.CL').innerHTML = `
+        <label for="unitsCL">CL</label>
+        <input type="text" name="uCL" id="RuCL">`
+        
+        document.querySelector('.CLR').innerHTML = `
+        <label for="unitsCL">CL</label>
+        <input type="text" name="uCL" id="uCL">`
+        
+    }
+    })
+
+    let Npai = ''
+    let Cl = ''
+    let rCl = ''
+    try {Npai = document.getElementById('Npai').value;}
+    catch (error){}
+
+    try {
+        Cl = document.querySelector("#uCL").value;
+    } catch (error){}
+    
+    try {
+        console.log(document.querySelector('#RuCL'))
+        rCl = document.querySelector("#RuCL").value;
+    } catch (error){console.log(error)}
+    
     let Naluno = document.getElementById('Naluno').value;
-    let Cl = document.getElementById('uCL').value;
     let Wl = document.getElementById('uWL').value;
-    let rCl = document.getElementById('RuCL').value;
     let rWl = document.getElementById('RuWL').value;
     let hora = document.getElementById('hora').value;
     let secretaria = document.getElementById('secretaria').value;
-    let sexo = document.getElementById('menino').checked;
-    let pronome1 = sexo == true ? 'ele' : 'ela';
-    let pronome2 = sexo == true ? 'dele' : 'dela';
+    let sexo = document.querySelector('#sexo').value;
+    let adulto = document.getElementById('adulto').checked;
+    let novosistema = document.getElementById('novoSistema').checked;
+    let pronome1 = sexo == 'Masculino' ? 'ele' : 'ela';
+    let pronome2 = sexo == 'Masculino' ? 'dele' : 'dela';
     let feito = ''
     let nFeito = ''
+
+    // Alterar as opções com base no que foi escolhido acima
+    if (adulto) {
+        document.querySelector('.Npai').innerHTML = ''
+    }
+    else {
+        document.querySelector('.Npai').innerHTML = `
+            <label for="nomePai">Nome do Responsável: </label>
+            <input type="text" name="Npai" id="Npai">`
+    }
+    
     function colocarUnidade(Unidades) {
         quantidadesUnidades = Unidades.length == 0 ? [] : Unidades.split(' ')
-        console.log('O tamanho é:' + quantidadesUnidades.length)
-        console.log('Unidade tem virgula? ' + Unidades.indexOf(','))
         if (quantidadesUnidades.length == 0) {
-            console.log('0')
             return Unidades;
         }
         
         else if (quantidadesUnidades.length > 1 | Unidades.indexOf(',') != -1) {
-            console.log('>1')
             Unidades = 'Unidades ' + Unidades;
             return Unidades;
         }
         else if (quantidadesUnidades.length == 1) {
-            console.log('1')
             Unidades = ('Unidade ' + Unidades);
             return Unidades;
         }
         
     }
-    console.log('iniciou')
-    Cl = colocarUnidade(Cl)
+
     Wl = colocarUnidade(Wl)
-    rCl = colocarUnidade(rCl)
     rWl = colocarUnidade(rWl)
-    
-    console.log('Terminou')
+    if (!novosistema) {
+        Cl = colocarUnidade(Cl)
+        rCl = colocarUnidade(rCl)
+    }
 
     if (rCl != '' | rWl != ''){
         feito = '*✅ O que já foi feito:* <br>';
@@ -62,7 +99,8 @@ document.addEventListener('input', function(){
         }
     }
 
-    var texto = `${hora}, ${Npai} <br>
+    if (!adulto) {
+        var texto = `${hora}, ${Npai} <br>
 Espero que tudo esteja ótimo! <br>
 <br>
 Passando para compartilhar um breve acompanhamento das atividades da casa de ${Naluno}, conforme registrado no nosso sistema:<br>
@@ -77,6 +115,25 @@ Caso ${pronome1} esteja tendo alguma dificuldade com as tarefas, podemos agendar
 Agradecemos a parceria! <br>
 Atenciosamente, <br>
 ${secretaria} <br>
+*CNA Casa Forte*`
+    }
+    else {
+        var texto = `${hora}, ${Naluno} <br>
+Espero que tudo esteja ótimo! <br>
+<br>
+Passando para compartilhar um breve acompanhamento das suas atividades da casa, conforme registrado no nosso sistema:<br>
+<br>
+${feito}
+${nFeito}
+<br>
+Conte conosco para te apoiar nas suas atividades e no seu progresso! Caso precise, podemos agendar um momento para você realizar essas tarefas junto com a nossa monitora.<br>
+A realização dessas tarefas é fundamental para o seu aprendizado e melhoria do seu nível de inlgês. <br>
+<br>
+Agradecemos a parceria! <br>
+Atenciosamente, <br>
+${secretaria} <br>
 *CNA Casa Forte*` 
+    }
+    
 document.getElementById('texto').innerHTML = texto
 });

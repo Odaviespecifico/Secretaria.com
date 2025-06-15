@@ -15,13 +15,25 @@
             <select name="Seletor-atividade" id="Atividade">
                 <option value="Homework">Cobrança de Homework</option>
             </select>
+            <span class="pipe">|</span>
             <select name="Seletor-horário" id="hora">
                 <option value="Bom dia">Dia</option>
                 <option value="Boa tarde">Tarde</option>
                 <option value="Boa noite">Noite</option>
             </select>
-            <label for="menino">É menino?</label>
-            <input type="checkbox" id="menino" value="True">
+            <span class="pipe">|</span>
+            <select name="" id="sexo">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+            </select>
+
+            <span class="pipe">|</span>
+            <label for="adulto">Aluno adulto?</label>
+            <input type="checkbox" id="adulto" value="False" width="13px">
+            <span class="pipe">|</span>
+            <label for="teenup">Teen up/fly</label>
+            <input type="checkbox" id="novoSistema" value="False" width="13px">
+
         </div>
         <br>
         <div class="row">
@@ -31,8 +43,10 @@
         <br class="espaço">
         
         <div class="row">
-            <label for="nomePai">Nome do Responsável: </label>
-            <input type="text" name="Npai" id="Npai">
+            <span class="Npai">
+                <label for="nomePai">Nome do Responsável: </label>
+                <input type="text" name="Npai" id="Npai">
+            </span>
             <label for="nomeAluno">Nome do Aluno: </label>
             <input type="text" name="nAluno" id="Naluno">
         </div>
@@ -42,15 +56,19 @@
         <div class="row atividade">
             <label for="unitsWL">Unidades Realizadas: <br> WL</label>
             <input type="text" name="uWL" id="RuWL">
-            <label for="unitsCL">CL</label>
-            <input type="text" name="uCL" id="RuCL">
+            <span class="CL">
+                <label for="unitsCL">CL</label>
+                <input type="text" name="uCL" id="RuCL">
+            </span>
         </div>
         <br>
         <div class="row atividade">
-            <label for="unitsWL">Unidades pendentes: <br>Wl</label>
+            <label for="unitsWL">Unidades pendentes: <br>WL</label>
             <input type="text" name="uWL" id="uWL">
-            <label for="unitsCL">CL</label>
-            <input type="text" name="uCL" id="uCL">
+            <span class="CLR">
+                <label for="unitsCL">CL</label>
+                <input type="text" name="uCL" id="uCL">
+            </span>
         
         </div>
     </div>
