@@ -16,6 +16,19 @@ document.addEventListener('input', function(){
     }
     })
 
+    document.getElementById('adulto').addEventListener('click', () => {
+        if (document.getElementById('adulto').checked) {
+        document.querySelector('.Npai').innerHTML = ''
+    }
+    else {
+        document.querySelector('.Npai').innerHTML = `
+            <label for="nomePai">Nome do Responsável: </label>
+            <input type="text" name="Npai" id="Npai">
+            <br>`
+    }
+    })
+    
+
     let Npai = ''
     let Cl = ''
     let rCl = ''
@@ -43,16 +56,8 @@ document.addEventListener('input', function(){
     let pronome2 = sexo == 'Masculino' ? 'dele' : 'dela';
     let feito = ''
     let nFeito = ''
-
     // Alterar as opções com base no que foi escolhido acima
-    if (adulto) {
-        document.querySelector('.Npai').innerHTML = ''
-    }
-    else {
-        document.querySelector('.Npai').innerHTML = `
-            <label for="nomePai">Nome do Responsável: </label>
-            <input type="text" name="Npai" id="Npai">`
-    }
+    
     
     function colocarUnidade(Unidades) {
         quantidadesUnidades = Unidades.length == 0 ? [] : Unidades.split(' ')

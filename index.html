@@ -10,6 +10,7 @@
 <body>
     <h1>Secretaría CNA</h1>
     <hr>
+    <div class="topo">
     <div class="top">
         <div class="row">
             <select name="Seletor-atividade" id="Atividade">
@@ -26,8 +27,7 @@
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
             </select>
-
-            <span class="pipe">|</span>
+            <br>
             <label for="adulto">Aluno adulto?</label>
             <input type="checkbox" id="adulto" value="False" width="13px">
             <span class="pipe">|</span>
@@ -46,6 +46,7 @@
             <span class="Npai">
                 <label for="nomePai">Nome do Responsável: </label>
                 <input type="text" name="Npai" id="Npai">
+                <br>
             </span>
             <label for="nomeAluno">Nome do Aluno: </label>
             <input type="text" name="nAluno" id="Naluno">
@@ -54,38 +55,59 @@
         <br class="espaço">
         
         <div class="row atividade">
-            <label for="unitsWL">Unidades Realizadas: <br> WL</label>
+            <label for="unitsWL">Unidades Realizadas: <br> WL:</label>
             <input type="text" name="uWL" id="RuWL">
+            <br>
             <span class="CL">
-                <label for="unitsCL">CL</label>
+                <label for="unitsCL">CL:</label>
                 <input type="text" name="uCL" id="RuCL">
             </span>
         </div>
         <br>
         <div class="row atividade">
-            <label for="unitsWL">Unidades pendentes: <br>WL</label>
+            <label for="unitsWL">Unidades pendentes: <br>WL:</label>
             <input type="text" name="uWL" id="uWL">
+            <br>
             <span class="CLR">
-                <label for="unitsCL">CL</label>
+                <label for="unitsCL">CL:</label>
                 <input type="text" name="uCL" id="uCL">
             </span>
         
         </div>
     </div>
-    <hr>
-    <div class="text-button">
-        <h2>Texto para enviar:</h2>
-        <button id="copia" onclick="Função()">Copiar</button>
-    </div>
-    <p id="texto"></p>
-    <script src="script.js"></script>
-    <script>
-        function Função() {
-            console.log('clicou')
-            console.log(texto)
-            navigator.clipboard.writeText(texto.innerText)
+    <div class="texto">
+        <div class="text-button">
+            <h2>Texto para enviar:</h2>
+            <button id="copia" onclick="Função()">Copiar</button>
+        </div>
+        <p id="texto"> bom dia, [nome aluno] <br>
+Espero que tudo esteja ótimo! <br>
+<br>
+Passando para compartilhar um breve acompanhamento das suas atividades da casa, conforme registrado no nosso sistema:<br>
+<br>
+
+<br>
+Conte conosco para te apoiar nas suas atividades e no seu progresso! Caso precise, podemos agendar um momento para você realizar essas tarefas junto com a nossa monitora.<br>
+A realização dessas tarefas é fundamental para o seu aprendizado e melhoria do seu nível de inlgês. <br>
+<br>
+Agradecemos a parceria! <br>
+Atenciosamente, <br>
+Seu nome <br>
+*CNA Casa Forte*` </p>
+        <script src="script.js"></script>
+        <script>
+            function Função() {
+                console.log('clicou')
+                let texto = document.getElementById('texto').innerText
+                const textarea = document.createElement("textarea");
+                textarea.value = texto;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy")
         }
     </script>
+    </div>
+    </div>
     <hr>
     <h2>Instruções para uso:</h2>
     <ol>
