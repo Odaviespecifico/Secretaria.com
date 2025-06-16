@@ -9,7 +9,6 @@
 </head>
 <body>
     <h1>Fidelização CNA</h1>
-    <hr>
     <div class="topo">
     <div class="top">
         <div class="row">
@@ -78,35 +77,23 @@
     <div class="texto">
         <div class="text-button">
             <h2>Texto para enviar:</h2>
-            <button id="copia" onclick="Função()">Copiar</button>
         </div>
         <p id="texto"> bom dia, [nome aluno] <br>
-Espero que tudo esteja ótimo! <br>
-<br>
-Passando para compartilhar um breve acompanhamento das suas atividades da casa, conforme registrado no nosso sistema:<br>
-<br>
-
-<br>
-Conte conosco para te apoiar nas suas atividades e no seu progresso! Caso precise, podemos agendar um momento para você realizar essas tarefas junto com a nossa monitora.<br>
-A realização dessas tarefas é fundamental para o seu aprendizado e melhoria do seu nível de inlgês. <br>
-<br>
-Agradecemos a parceria! <br>
-Atenciosamente, <br>
-Seu nome <br>
-*CNA Casa Forte*` </p>
+            Espero que tudo esteja ótimo! <br>
+            <br>
+            Passando para compartilhar um breve acompanhamento das suas atividades da casa, conforme registrado no nosso sistema:<br>
+            <br>
+            
+            <br>
+            Conte conosco para te apoiar nas suas atividades e no seu progresso! Caso precise, podemos agendar um momento para você realizar essas tarefas junto com a nossa monitora.<br>
+            A realização dessas tarefas é fundamental para o seu aprendizado e melhoria do seu nível de inlgês. <br>
+            <br>
+            Agradecemos a parceria! <br>
+            Atenciosamente, <br>
+            Seu nome <br>
+            *CNA Casa Forte*` </p>
+        <button id="copia" onclick="Copiar()">Copiar</button>
         <script src="script.js"></script>
-        <script>
-            function Função() {
-                console.log('clicou')
-                let texto = document.getElementById('texto').innerText
-                const textarea = document.createElement("textarea");
-                textarea.value = texto;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand("copy")
-                textarea.remove()
-        }
-    </script>
     </div>
     </div>
     <hr>

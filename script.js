@@ -142,3 +142,19 @@ ${secretaria} <br>
     
 document.getElementById('texto').innerHTML = texto
 });
+
+function Copiar() {
+                console.log('clicou')
+                let texto = document.getElementById('texto').innerText
+                const textarea = document.createElement("textarea");
+                textarea.value = texto;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy")
+                textarea.remove()
+            
+            }
+
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'c') {Copiar()}
+})
