@@ -1,4 +1,5 @@
-document.addEventListener('input', function(){
+document.addEventListener('input', function(e){
+    if (e.target == this.querySelector('p#texto')) {return} //Ignore the event if it is editing the target text
     document.getElementById('novoSistema').addEventListener('click', (e) => {
         if (!novosistema) {
         document.querySelector('.CL').innerHTML = ''
